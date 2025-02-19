@@ -13,12 +13,12 @@ int main(int argc, char *argv[])//./exe 2 6
 
     char *err1, *err2;
     double x, y;
-    if((x=(double)strtol(*(argv+1), &err1, 10) <= 0 || *err1 != '\0')){
+    if((x=(double)strtod(*(argv+1), &err1) <= 0 || *err1 != '\0')){
         fprintf(stderr, "Illegal Parameter: %s\n", argv[1]);
         return(2);
     }
 
-    if((y=(double)strtol(*(argv+2), &err2, 10) <= 0 || *err2 != '\0')){
+    if((y=(double)strtod(*(argv+2), &err2) <= 0 || *err2 != '\0')){
         fprintf(stderr, "Illegal Parameter: %s\n", argv[2]);
         return(2);
     }
