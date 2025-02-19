@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "rotate.h"
-#include<math.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 #define LENGTH 16
 
@@ -13,7 +12,7 @@ int main(int argc, char *argv[])//./exe 2 6
     }
 
     char *err1, *err2;
-    int x, y;
+    double x, y;
     if((x=(double)strtol(*(argv+1), &err1, 10) <= 0 || *err1 != '\0')){
         fprintf(stderr, "Illegal Parameter: %s\n", argv[1]);
         return(2);
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])//./exe 2 6
     rotate(&x, &y);
 
     double ans;
-    if (((x - y) % 2) == 1 ){
+    if (((int)(x - y) % 2) == 1 ){
         ans = x * y;
     } else {
         ans = pow(x,y);
@@ -45,12 +44,12 @@ int main(int argc, char *argv[])//./exe 2 6
     if(flname[n=strlen(flname)-1] == '\n') flname[n] = '\0';
 
     FILE *fp;
-    if((fp = fopen(flname, "w")) == NULL){
+    if((fp = fopen(flname, "a")) == NULL){
         fprintf(stderr, "Can't open file\n");
         return(4);
     }
 
-    fprintf(fp, str(ans));
+    fprintf(fp, "answer = %lf\n",ans);
     fclose(fp);
-    
+
 }
