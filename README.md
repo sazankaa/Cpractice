@@ -1,3 +1,3 @@
-# AAAAAAAAAAAAAAAAAAAAAAA  
+# Cpractice
 
-c でも py でもどっちでも
+適当
