@@ -3,6 +3,8 @@
 #include<math.h>
 #include<stdlib.h>
 
+#define LENGTH 16
+
 int main(int argc, char *argv[])//./exe 2 6
 {
     if(argc != 3){
@@ -36,4 +38,19 @@ int main(int argc, char *argv[])//./exe 2 6
         ans = pow(x,y);
     }
 
+    char flname[16];
+    int n;
+    printf("new file name > ");
+    fgets(flname, LENGTH, stdin);
+    if(flname[n=strlen(flname)-1] == '\n') flname[n] = '\0';
+
+    FILE *fp;
+    if((fp = fopen(flname, "w")) == NULL){
+        fprintf(stderr, "Can't open file\n");
+        return(4);
+    }
+
+    fprintf(fp, str(ans));
+    fclose(fp);
+    
 }
