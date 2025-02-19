@@ -13,12 +13,14 @@ int main(int argc, char *argv[])//./exe 2 6
 
     char *err1, *err2;
     double x, y;
-    if((x=(double)strtod(*(argv+1), &err1) <= 0 || *err1 != '\0')){
+    x=strtod(argv[1], &err1);
+    if(*err1 != '\0'){
         fprintf(stderr, "Illegal Parameter: %s\n", argv[1]);
         return(2);
     }
 
-    if((y=(double)strtod(*(argv+2), &err2) <= 0 || *err2 != '\0')){
+    y=strtod(argv[2], &err2);
+    if(*err2 != '\0'){
         fprintf(stderr, "Illegal Parameter: %s\n", argv[2]);
         return(2);
     }
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])//./exe 2 6
     rotate(&x, &y);
 
     double ans;
-    if (((int)(x - y) % 2) == 1 ){
+    if (((int)(y - x) % 2) == 1 ){
         ans = x * y;
     } else {
         ans = pow(x,y);
@@ -49,7 +51,7 @@ int main(int argc, char *argv[])//./exe 2 6
         return(4);
     }
 
-    fprintf(fp, "answer = %lf\n",ans);
+    fprintf(fp, "answer = %lf\n", ans);
     fclose(fp);
-
+    return(0);
 }
