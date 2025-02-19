@@ -1,0 +1,1 @@
+void rotate(double *x, double *y);

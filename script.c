@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "rotate.h"
 
 int main(int argc, char *argv[])//./exe 2 6
 {
@@ -11,5 +12,6 @@ int main(int argc, char *argv[])//./exe 2 6
         fprintf(stderr, "should be bigger than 0!");
         return(2);
     }
-    
+
+    r
 }
