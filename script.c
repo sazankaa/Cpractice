@@ -36,7 +36,7 @@ int main(int argc, char *argv[])//./exe 2 6
     if (((int)(y - x) % 2) == 1 ){
         ans = x * y;
     } else {
-        ans = pow(x,y);
+        ans = x / y;
     }
 
     char flname[16];
